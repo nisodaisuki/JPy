@@ -2,6 +2,7 @@ import org.nisodaisuki.j2p.EPython;
 import org.nisodaisuki.shared.GShared;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class main
@@ -31,9 +32,9 @@ public class main
             if (file.isFile() && file.exists())
             // 判断文件是否存在
             {
-                InputStreamReader read = new InputStreamReader(new FileInputStream(file), "UTF-8");// 考虑到编码格式
+                InputStreamReader read = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);// 考虑到编码格式
                 BufferedReader bufferedReader = new BufferedReader(read);
-                String lineTxt = null;
+                String lineTxt;
                 lineTxt = bufferedReader.readLine();
                 if (lineTxt.contains(PYTHON2))
                     EPython.set_python2_path(lineTxt.substring(PYTHON2.length()));
@@ -73,6 +74,7 @@ public class main
             }
 
             String[] files = file.list();
+            assert files != null;
             for(String file_name:files)
             {
                 if (file_name.toUpperCase().startsWith("CVE_"))
@@ -112,7 +114,5 @@ public class main
         _files_names = get_file_names(work_dir);
 
         EPython.exec_nets(args[CMD_IPSTART_IDX], args[CMD_IPEND_IDX], work_dir, _files_names);
-
-        int a = 1;
     }
 }
