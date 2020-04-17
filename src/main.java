@@ -112,5 +112,7 @@ public class main
         _files_names = get_file_names(work_dir);
 
         EPython.exec_nets(args[CMD_IPSTART_IDX], args[CMD_IPEND_IDX], work_dir, _files_names);
+
+        int a = 1;
     }
 }

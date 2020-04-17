@@ -1,0 +1,4 @@
+python2 == C:\bin\Python\Python27\python.exe
+python3 == C:\bin\Python\Python27\python.exe
+cve_2019_1938 == Tomcat-Ajp协议任意文件读取漏洞
+cve_2020_0796 == 微软SMBv3协议远程代码执行漏洞
