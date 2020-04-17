@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JPy:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JPy_jar</output-path>
+    <root id="archive" name="JPy.jar">
+      <element id="module-output" name="JPy" />
+    </root>
+  </artifact>
+</component>
